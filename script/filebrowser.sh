@@ -1,7 +1,7 @@
 #!/bin/bash
 ###
 # @Author: https://github.com/233boy/filebrowser
- # @LastEditTime: 2023-01-28 22:56:27
+ # @LastEditTime: 2023-01-29 11:10:16
  # @LastEditors: wanyunr syq2048@outlook.com
 # @Description: 可自定义路径
 ### 
@@ -105,7 +105,7 @@ WantedBy=multi-user.target
 
 		$red重要提示，尽快打开预览地址登录 并修改密码$none
 
-		脚本帮助说明: https://233blog.com/post/26/
+		脚本帮助说明: https://github.com/wanyunr/package/wiki
 		"
 	else
 		echo -e " \n$red安装失败...$none\n"

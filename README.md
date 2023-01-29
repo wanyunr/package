@@ -18,4 +18,4 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/wanyunr/package
 ```bash
 wget -N --no-check-certificate https://raw.githubusercontent.com/wanyunr/package/main/script/filebrowser.sh && bash filebrowser.sh
 ```
-[filebrowser一键安装脚本使用说明](https://github.com/wanyunr/package/wiki/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E#filebrowser%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
+[filebrowser一键安装脚本使用说明](https://github.com/wanyunr/package/wiki/#filebrowser%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
