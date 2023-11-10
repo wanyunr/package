@@ -136,7 +136,7 @@ function dd() {
     chmod +x "/root/box/InstallNET.sh"
     blue "下载完成"
     green "默认DD系统为 Debian 11 ，密码为 LeitboGi0ro"
-    green "手动运行: bash /root/box/InstallNET.sh -debian --motd"
+    green "手动运行: bash /root/box/InstallNET.sh -debian 11 --motd"
     green "查看帮助: https://github.com/leitbogioro/Tools#quickly-start "
 }
 #主菜单
