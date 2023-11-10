@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2023-11-11 04:05:18
+ # @LastEditTime : 2023-11-11 04:07:11
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -131,7 +131,7 @@ function filebrowser() {
 }
 
 #一键DD脚本
-function ski() {
+function dd() {
     wget -P "/root/box" "https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh" --no-check-certificate -N
     chmod +x "/root/box/InstallNET.sh"
     blue "下载完成"
@@ -161,6 +161,7 @@ function start_menu() {
     green " 11. Yabs.sh测试"
     green " 12. Acme.sh 域名证书一键申请脚本"
     green " 13. filebrowser一键安装"
+    green " 14. 一键DD脚本"
     yellow " --------------------------------------------------"
     green " 0. 退出脚本"
     echo
@@ -204,6 +205,9 @@ function start_menu() {
         ;;
     13)
         filebrowser
+        ;;
+    14)
+        dd
         ;;
     0)
         exit 1
