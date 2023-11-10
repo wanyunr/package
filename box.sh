@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2023-11-11 03:49:40
+ # @LastEditTime : 2023-11-11 04:05:18
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -130,6 +130,15 @@ function filebrowser() {
     green "手动运行: bash /root/box/filebrowser.sh"
 }
 
+#一键DD脚本
+function ski() {
+    wget -P "/root/box" "https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh" --no-check-certificate -N
+    chmod +x "/root/box/InstallNET.sh"
+    blue "下载完成"
+    green "默认DD系统为 Debian 11 ，密码为 LeitboGi0ro"
+    green "手动运行: bash /root/box/InstallNET.sh -debian --motd"
+    green "查看帮助: https://github.com/leitbogioro/Tools#quickly-start "
+}
 #主菜单
 function start_menu() {
     clear
