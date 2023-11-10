@@ -1,32 +1,30 @@
 ## VPS Tools 使用
 ```bash
-wget -N box.sh https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh
+wget -N https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh
 ```
 ## 预览
 ```
-# wget -N box.sh https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh
-
-    ---------------------VPS Tools--------------------- 
-    FROM: https://github.com/wanyunr/package 
-    USE:  wget -N box.sh https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && ./box.sh 
-    ==================================================
-    1.  ipv4/6优先级调整一键脚本
-    2.  测试 IPv4 优先还是 IPv6 优先
-    3.  内核安装和BBR加速脚本
-    4.  SSH 密钥一键配置脚本下载
-    5.  Linux一键换源
-    --------------------------------------------------
-    6.  路由追踪测试
-    7.  NEZHA.SH哪吒面板/探针
-    8.  流媒体解锁测试
-    9.  三网测速
-    10. 国际测速
-    --------------------------------------------------
-    11. Yabs.sh测试
-    12. Acme.sh 域名证书一键申请脚本
-    13. filebrowser一键安装
-    --------------------------------------------------
-    0. 退出脚本
+ ---------------------VPS Tools---------------------
+ FROM: https://github.com/wanyunr/package 
+ USE:  wget -N https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh
+ ==================================================
+ 1.  ipv4/6优先级调整一键脚本
+ 2.  测试 IPv4 优先还是 IPv6 优先
+ 3.  内核安装和BBR加速脚本
+ 4.  SSH 密钥一键配置脚本下载
+ 5.  Linux一键换源
+ --------------------------------------------------
+ 6.  路由追踪测试
+ 7.  NEZHA.SH哪吒面板/探针
+ 8.  流媒体解锁测试
+ 9.  三网测速
+ 10. 国际测速
+ --------------------------------------------------
+ 11. Yabs.sh测试
+ 12. Acme.sh 域名证书一键申请脚本
+ 13. filebrowser一键安装
+ --------------------------------------------------
+ 0. 退出脚本
 ```
 ## 其他
 #### motd.sh
