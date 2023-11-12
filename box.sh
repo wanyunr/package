@@ -27,7 +27,7 @@ function ipvsh() {
     wget -P "/root/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/ipv.sh" --no-check-certificate -N
     chmod +x "/root/box/ipv.sh"
     blue "下载完成"
-    bash "/root/box/ipv.sh 来运行"
+    bash "/root/box/ipv.sh"
     green "手动运行: bash /root/box/ipv.sh"
 
 }
