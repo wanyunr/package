@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2023-11-11 04:13:14
+ # @LastEditTime : 2023-12-25 21:37:59
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -139,6 +139,12 @@ function dd() {
     green "手动运行: bash /root/box/InstallNET.sh -debian 11 --motd"
     green "查看帮助: https://github.com/leitbogioro/Tools#quickly-start "
 }
+function 1Panel() {
+    wget -P "/root/box" "https://resource.fit2cloud.com/1panel/package/quick_start.sh" --no-check-certificate -N
+    chmod +x "/root/box/quick_start.sh"
+    blue "下载完成"
+    bash "/root/box/quick_start.sh"
+}
 #主菜单
 function start_menu() {
     clear
@@ -153,15 +159,16 @@ function start_menu() {
     green " 5.  Linux一键换源"
     yellow " --------------------------------------------------"
     green " 6.  路由追踪测试"
-    green " 7.  NEZHA.SH哪吒面板/探针"
+    green " 7.  Yabs.sh测试"
     green " 8.  流媒体解锁测试"
     green " 9.  三网测速"
     green " 10. 国际测速"
     yellow " --------------------------------------------------"
-    green " 11. Yabs.sh测试"
-    green " 12. Acme.sh 域名证书一键申请脚本"
-    green " 13. filebrowser一键安装"
+    green " 11. 哪吒面板/探针安装"
+    green " 12. 一键安装Acme.sh脚本"
+    green " 13. 一键安装filebrowser"
     green " 14. 一键DD脚本"
+    green " 15. 一键安装1Panel面板"
     yellow " --------------------------------------------------"
     green " 0. 退出脚本"
     echo
@@ -186,7 +193,7 @@ function start_menu() {
         rtsh
         ;;
     7)
-        nezha
+        yabssh
         ;;
     8)
         RegionRestrictionCheck
@@ -198,7 +205,7 @@ function start_menu() {
         globe_speedtest
         ;;
     11)
-        yabssh
+        nezha
         ;;
     12)
         acme1key
@@ -208,6 +215,9 @@ function start_menu() {
         ;;
     14)
         dd
+        ;;
+    15)
+        1Panel
         ;;
     0)
         exit 1
