@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2023-12-25 21:37:59
+ # @LastEditTime : 2023-12-25 21:40:19
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -164,11 +164,11 @@ function start_menu() {
     green " 9.  三网测速"
     green " 10. 国际测速"
     yellow " --------------------------------------------------"
-    green " 11. 哪吒面板/探针安装"
-    green " 12. 一键安装Acme.sh脚本"
-    green " 13. 一键安装filebrowser"
+    green " 11. 安装哪吒面板/探针"
+    green " 12. 安装Acme.sh脚本"
+    green " 13. 安装filebrowser"
     green " 14. 一键DD脚本"
-    green " 15. 一键安装1Panel面板"
+    green " 15. 安装1Panel面板"
     yellow " --------------------------------------------------"
     green " 0. 退出脚本"
     echo
