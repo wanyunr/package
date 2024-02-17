@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2023-12-30 12:13:02
+ # @LastEditTime : 2024-02-17 15:42:10
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -104,11 +104,16 @@ function globe_speedtest() {
 
 #NEZHA.SH哪吒面板/探针·下载
 function nezha() {
-    wget -P /root/box -O "nezha.sh" "https://raw.githubusercontent.com/BlueSkyXN/nezha/master/script/install.sh" --no-check-certificate -N
-    chmod +x "/root/box/nezha.sh"
-    blue "下载完成"
-    bash "/root/box/nezha.sh"
-    green "手动运行: bash /root/box/nezha.sh"
+    country_code=$(curl -s ipinfo.io/country)
+    echo "$(date) - 当前国家为: $country_code"
+
+    if [ "$country_code" = "CN" ]; then
+        echo "$(date) - 从 gitee 安装 Nezha"
+        curl -L https://gitee.com/naibahq/nezha/raw/master/script/install.sh -o nezha.sh && chmod +x nezha.sh && sudo CN=true ./nezha.sh
+    else
+        echo "$(date) - 从 github 安装 Nezha"
+        curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh
+    fi
 }
 
 #Acme.sh 域名证书一键申请脚本
