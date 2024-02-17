@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-02-17 15:42:10
+ # @LastEditTime : 2024-02-17 15:50:20
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -105,7 +105,7 @@ function globe_speedtest() {
 #NEZHA.SH哪吒面板/探针·下载
 function nezha() {
     country_code=$(curl -s ipinfo.io/country)
-    echo "$(date) - 当前国家为: $country_code"
+    echo "$(date) - 当前地区代码为: $country_code"
 
     if [ "$country_code" = "CN" ]; then
         echo "$(date) - 从 gitee 安装 Nezha"

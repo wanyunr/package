@@ -6,7 +6,7 @@ wget -N https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +
 ```
  ---------------------VPS Tools---------------------
  FROM: https://github.com/wanyunr/package 
- USE:  wget -N https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh
+ USE:  wget -N box.sh https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh 
  ==================================================
  1.  ipv4/6优先级调整一键脚本
  2.  测试 IPv4 优先还是 IPv6 优先
@@ -15,14 +15,16 @@ wget -N https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +
  5.  Linux一键换源
  --------------------------------------------------
  6.  路由追踪测试
- 7.  NEZHA.SH哪吒面板/探针
+ 7.  Yabs.sh测试
  8.  流媒体解锁测试
  9.  三网测速
  10. 国际测速
  --------------------------------------------------
- 11. Yabs.sh测试
- 12. Acme.sh 域名证书一键申请脚本
- 13. filebrowser一键安装
+ 11. 安装哪吒面板/探针
+ 12. 安装Acme.sh脚本
+ 13. 安装filebrowser
+ 14. 一键DD脚本
+ 15. 安装1Panel面板
  --------------------------------------------------
  0. 退出脚本
 ```
