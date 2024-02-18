@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-02-17 15:50:20
+ # @LastEditTime : 2024-02-18 16:37:05
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -48,6 +48,14 @@ function kernel() {
     green "手动运行: bash /root/box/kernel.sh"
 }
 
+#TCP加速 一键安装管理
+function tcpx() {
+    wget -P "/root/box" "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" --no-check-certificate -N
+    chmod +x "/root/box/tcpx.sh"
+    blue "下载完成"
+    bash "/root/box/tcpx.sh"
+    green "手动运行: bash /root/box/tcpx.sh"
+}
 #SSH 密钥一键配置脚本·下载
 function ski() {
     wget -P "/root/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/SSH-Key-Installer.sh" --no-check-certificate -N
@@ -55,6 +63,13 @@ function ski() {
     blue "下载完成"
     green "手动运行: bash /root/box/SSH-Key-Installer.sh"
     green "查看帮助: https://p3terx.com/archives/ssh-key-installer.html "
+}
+
+#F2B一键安装脚本
+function f2bsh(){
+red "卸载请 运行 wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/uninstall.sh && bash uninstall.sh"
+wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
+red "卸载请 运行 wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/uninstall.sh && bash uninstall.sh"
 }
 
 #Linux换源脚本-国内·下载
@@ -94,7 +109,7 @@ function RegionRestrictionCheck() {
 
 #三网测速
 function speedtest() {
-    bash <(curl -Lso- https://git.io/superspeed_uxh)
+    bash <(curl -sL bash.icu/speedtest)
 }
 
 #国际测速
@@ -150,6 +165,31 @@ function 1Panel() {
     blue "下载完成"
     bash "/root/box/quick_start.sh"
 }
+
+function aaPanel() {
+    wget -P "/root/box" "http://www.aapanel.com/script/install-ubuntu_6.0_en.sh" --no-check-certificate -N
+    blue "下载完成"
+    bash /root/box/install-ubuntu_6.0_en.sh forum
+}
+
+function warp() {
+    wget -O "/root/box/warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh" --no-check-certificate -N
+    blue "下载完成"
+    bash "/root/box/warp.sh"
+}
+
+function v2ray-agent() {
+    wget -O /root/box/v2ray-agent.sh https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh --no-check-certificate -N
+    blue "下载完成"
+    bash /root/box/v2ray-agent.sh
+}
+
+function x-ui() {
+    bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)
+}
+function 3x-ui() {
+    bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+}
 #主菜单
 function start_menu() {
     clear
@@ -157,23 +197,27 @@ function start_menu() {
     green " FROM: https://github.com/wanyunr/package "
     green " USE:  wget -N box.sh https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh "
     yellow " =================================================="
-    green " 1.  ipv4/6优先级调整一键脚本"
-    green " 2.  测试 IPv4 优先还是 IPv6 优先"
-    green " 3.  内核安装和BBR加速脚本"
-    green " 4.  SSH 密钥一键配置脚本下载"
-    green " 5.  Linux一键换源"
+    green " 1. ipv4/6优先级调整一键脚本"
+    green " 2. 测试 IPv4 优先还是 IPv6 优先"
+    green " 3. 内核安装和BBR加速脚本"
+    green " 4. TCP加速 一键安装管理"
+    green " 5. SSH 密钥一键配置脚本下载"
+    green " 6. Linux一键换源"
+    green " 7. F2B一键安装脚本"
+    green " 8. 一键DD脚本"
     yellow " --------------------------------------------------"
-    green " 6.  路由追踪测试"
-    green " 7.  Yabs.sh测试"
-    green " 8.  流媒体解锁测试"
-    green " 9.  三网测速"
-    green " 10. 国际测速"
+    green " 12. 路由追踪测试"
+    green " 13. Yabs.sh测试"
+    green " 14. 流媒体解锁测试"
+    green " 15. 三网测速"
+    green " 16. 国际测速"
     yellow " --------------------------------------------------"
-    green " 11. 安装哪吒面板/探针"
-    green " 12. 安装Acme.sh脚本"
-    green " 13. 安装filebrowser"
-    green " 14. 一键DD脚本"
-    green " 15. 安装1Panel面板"
+    green " 21. 安装哪吒面板/探针"
+    green " 22. 安装1Panel面板"
+    green " 23. 安装aaPanel面板"
+    green " 24. 安装Acme.sh脚本"
+    green " 25. 安装filebrowser"
+    green " 26. warp 一键安装"
     yellow " --------------------------------------------------"
     green " 0. 退出脚本"
     echo
@@ -189,40 +233,61 @@ function start_menu() {
         kernel
         ;;
     4)
-        ski
+        tcpx
         ;;
     5)
-        cm
+        ski
         ;;
     6)
-        rtsh
+        cm
         ;;
     7)
-        yabssh
+        f2bsh
         ;;
     8)
-        RegionRestrictionCheck
-        ;;
-    9)
-        speedtest
-        ;;
-    10)
-        globe_speedtest
-        ;;
-    11)
-        nezha
-        ;;
-    12)
-        acme1key
-        ;;
-    13)
-        filebrowser
-        ;;
-    14)
         dd
         ;;
+    12)
+        rtsh
+        ;;
+    13)
+        yabssh
+        ;;
+    14)
+        RegionRestrictionCheck
+        ;;
     15)
+        speedtest
+        ;;
+    16)
+        globe_speedtest
+        ;;
+    21)
+        nezha
+        ;;
+    22)
         1Panel
+        ;;
+    23)
+        aaPanel
+        ;;
+    24)
+        acme1key
+        ;;
+    25)
+        filebrowser
+        ;;
+    26)
+        warp
+        ;;
+    31)
+        v2ray-agent
+        ;;
+    32)
+        x-ui
+        ;;
+    33)
+        3x-ui
         ;;
     0)
         exit 1

@@ -8,23 +8,27 @@ wget -N https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +
  FROM: https://github.com/wanyunr/package 
  USE:  wget -N box.sh https://raw.githubusercontent.com/wanyunr/package/main/box.sh && chmod +x box.sh && bash box.sh 
  ==================================================
- 1.  ipv4/6优先级调整一键脚本
- 2.  测试 IPv4 优先还是 IPv6 优先
- 3.  内核安装和BBR加速脚本
- 4.  SSH 密钥一键配置脚本下载
- 5.  Linux一键换源
+ 1. ipv4/6优先级调整一键脚本
+ 2. 测试 IPv4 优先还是 IPv6 优先
+ 3. 内核安装和BBR加速脚本
+ 4. TCP加速 一键安装管理
+ 5. SSH 密钥一键配置脚本下载
+ 6. Linux一键换源
+ 7. F2B一键安装脚本
+ 8. 一键DD脚本
  --------------------------------------------------
- 6.  路由追踪测试
- 7.  Yabs.sh测试
- 8.  流媒体解锁测试
- 9.  三网测速
- 10. 国际测速
+ 12. 路由追踪测试
+ 13. Yabs.sh测试
+ 14. 流媒体解锁测试
+ 15. 三网测速
+ 16. 国际测速
  --------------------------------------------------
- 11. 安装哪吒面板/探针
- 12. 安装Acme.sh脚本
- 13. 安装filebrowser
- 14. 一键DD脚本
- 15. 安装1Panel面板
+ 21. 安装哪吒面板/探针
+ 22. 安装1Panel面板
+ 23. 安装aaPanel面板
+ 24. 安装Acme.sh脚本
+ 25. 安装filebrowser
+ 26. warp 一键安装
  --------------------------------------------------
  0. 退出脚本
 ```
