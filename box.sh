@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-02-18 16:37:05
+ # @LastEditTime : 2024-02-22 15:37:16
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -96,7 +96,7 @@ function rtsh() {
 
 #Yabs.sh测试
 function yabssh() {
-    wget -P "/root/box" "https://raw.githubusercontent.com/BlueSkyXN/ChangeSource/master/yabs.sh" --no-check-certificate
+    wget -P "/root/box" "https://raw.githubusercontent.com/masonr/yet-another-bench-script/master/yabs.sh" --no-check-certificate
     chmod +x "/root/box/yabs.sh"
     blue "下载完成"
     bash "/root/box/yabs.sh"
@@ -168,18 +168,21 @@ function 1Panel() {
 
 function aaPanel() {
     wget -P "/root/box" "http://www.aapanel.com/script/install-ubuntu_6.0_en.sh" --no-check-certificate -N
+    chmod +x /root/box/install-ubuntu_6.0_en.sh
     blue "下载完成"
     bash /root/box/install-ubuntu_6.0_en.sh forum
 }
 
 function warp() {
     wget -O "/root/box/warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh" --no-check-certificate -N
+    chmod +x "/root/box/warp.sh"
     blue "下载完成"
     bash "/root/box/warp.sh"
 }
 
 function v2ray-agent() {
     wget -O /root/box/v2ray-agent.sh https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh --no-check-certificate -N
+    chmod +x /root/box/v2ray-agent.sh
     blue "下载完成"
     bash /root/box/v2ray-agent.sh
 }
