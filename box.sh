@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-02-22 15:37:16
+ # @LastEditTime : 2024-03-16 18:31:32
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -96,10 +96,23 @@ function rtsh() {
 
 #Yabs.sh测试
 function yabssh() {
-    wget -P "/root/box" "https://raw.githubusercontent.com/masonr/yet-another-bench-script/master/yabs.sh" --no-check-certificate
-    chmod +x "/root/box/yabs.sh"
-    blue "下载完成"
-    bash "/root/box/yabs.sh"
+    blue "-f/-d	禁用 fio（磁盘性能）测试"
+    blue "-i	禁用 iperf（网络性能）测试"
+    blue "-g	禁用 Geekbench（系统性能）测试"
+    blue "-5	运行 Geekbench 5 测试并禁用 Geekbench 6 测试"
+    blue "示例：curl -sL yabs.sh | bash -s -- -fig	#仅打印系统信息"
+    # 询问是否继续，回车继续，输入其他字符退出
+    read -p "回车继续，输入其他字符退出:" yabs
+    [[ -z ${yabs} ]] && yabs="y"
+    [[ ${yabs} != "y" ]] && [[ ${yabs} != "Y" ]] && exit 1
+    # 下载并运行 yabs.sh
+    curl -sL yabs.sh | bash
+    green "手动运行: curl -sL yabs.sh | bash"
+    green "-f/-d	禁用 fio（磁盘性能）测试"
+    green "-i	禁用 iperf（网络性能）测试"
+    green "-g	禁用 Geekbench（系统性能）测试"
+    green "-5	运行 Geekbench 5 测试并禁用 Geekbench 6 测试"
+    green "示例：curl -sL yabs.sh | bash -s -- -fig	#仅打印系统信息"
 }
 
 #RegionRestrictionCheck 流媒体解锁测试
@@ -173,6 +186,11 @@ function aaPanel() {
     bash /root/box/install-ubuntu_6.0_en.sh forum
 }
 
+#Docker 一键安装
+function Docker() {
+    curl -fsSL https://get.docker.com | bash
+}
+
 function warp() {
     wget -O "/root/box/warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh" --no-check-certificate -N
     chmod +x "/root/box/warp.sh"
@@ -216,11 +234,11 @@ function start_menu() {
     green " 16. 国际测速"
     yellow " --------------------------------------------------"
     green " 21. 安装哪吒面板/探针"
-    green " 22. 安装1Panel面板"
-    green " 23. 安装aaPanel面板"
-    green " 24. 安装Acme.sh脚本"
-    green " 25. 安装filebrowser"
-    green " 26. warp 一键安装"
+    green " 22. 安装Docker"
+    green " 23. 安装1Panel面板"
+    green " 24. 安装aaPanel面板"
+    green " 25. 安装Acme.sh脚本"
+    green " 26. 安装filebrowser"
     yellow " --------------------------------------------------"
     green " 0. 退出脚本"
     echo
@@ -269,19 +287,19 @@ function start_menu() {
         nezha
         ;;
     22)
-        1Panel
+        Docker
         ;;
     23)
-        aaPanel
+        1Panel
         ;;
     24)
-        acme1key
+        aaPanel
         ;;
     25)
-        filebrowser
+        acme1key
         ;;
     26)
-        warp
+        filebrowser
         ;;
     31)
         v2ray-agent
@@ -291,6 +309,9 @@ function start_menu() {
         ;;
     33)
         3x-ui
+        ;;
+    34)
+        warp
         ;;
     0)
         exit 1
