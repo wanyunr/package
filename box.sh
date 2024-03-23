@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-03-16 19:32:59
+ # @LastEditTime : 2024-03-23 12:22:57
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -24,11 +24,11 @@ blue() {
 
 #IPV.SH ipv4/6优先级调整一键脚本
 function ipvsh() {
-    wget -P "/root/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/ipv.sh" --no-check-certificate -N
-    chmod +x "/root/box/ipv.sh"
+    wget -P "~/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/ipv.sh" --no-check-certificate -N
+    chmod +x "~/box/ipv.sh"
     blue "下载完成"
-    bash "/root/box/ipv.sh"
-    green "手动运行: bash /root/box/ipv.sh"
+    bash "~/box/ipv.sh"
+    green "手动运行: bash ~/box/ipv.sh"
 
 }
 
@@ -41,27 +41,27 @@ function getip() {
 
 #最新或 LTS 版本的 Linux 内核并启用 BBR 或 BBR Plus安装
 function kernel() {
-    wget -P "/root/box" "https://git.io/kernel.sh" --no-check-certificate -N
-    chmod +x "/root/box/kernel.sh"
+    wget -P "~/box" "https://git.io/kernel.sh" --no-check-certificate -N
+    chmod +x "~/box/kernel.sh"
     blue "下载完成"
-    bash "/root/box/kernel.sh"
-    green "手动运行: bash /root/box/kernel.sh"
+    bash "~/box/kernel.sh"
+    green "手动运行: bash ~/box/kernel.sh"
 }
 
 #TCP加速 一键安装管理
 function tcpx() {
-    wget -P "/root/box" "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" --no-check-certificate -N
-    chmod +x "/root/box/tcpx.sh"
+    wget -P "~/box" "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" --no-check-certificate -N
+    chmod +x "~/box/tcpx.sh"
     blue "下载完成"
-    bash "/root/box/tcpx.sh"
-    green "手动运行: bash /root/box/tcpx.sh"
+    bash "~/box/tcpx.sh"
+    green "手动运行: bash ~/box/tcpx.sh"
 }
 #SSH 密钥一键配置脚本·下载
 function ski() {
-    wget -P "/root/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/SSH-Key-Installer.sh" --no-check-certificate -N
-    chmod +x "/root/box/SSH-Key-Installer.sh"
+    wget -P "~/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/SSH-Key-Installer.sh" --no-check-certificate -N
+    chmod +x "~/box/SSH-Key-Installer.sh"
     blue "下载完成"
-    green "手动运行: bash /root/box/SSH-Key-Installer.sh"
+    green "手动运行: bash ~/box/SSH-Key-Installer.sh"
     green "查看帮助: https://p3terx.com/archives/ssh-key-installer.html "
 }
 
@@ -74,24 +74,24 @@ red "卸载请 运行 wget https://raw.githubusercontent.com/FunctionClub/Fail2b
 
 #Linux换源脚本-国内·下载
 function cm() {
-    wget -P "/root/box" "https://raw.githubusercontent.com/SuperManito/LinuxMirrors/main/ChangeMirrors.sh" --no-check-certificate -N
-    chmod +x "/root/box/ChangeMirrors.sh"
+    wget -P "~/box" "https://raw.githubusercontent.com/SuperManito/LinuxMirrors/main/ChangeMirrors.sh" --no-check-certificate -N
+    chmod +x "~/box/ChangeMirrors.sh"
     blue "下载完成"
     echo
     green "请自行输入下面命令切换对应源"
     green " =================================================="
     echo
-    green " bash /root/box/ChangeMirrors.sh 国内源选择切换 "
-    green " bash /root/box/ChangeMirrors.sh --abroad  国外源选择切换  "
+    green " bash ~/box/ChangeMirrors.sh 国内源选择切换 "
+    green " bash ~/box/ChangeMirrors.sh --abroad  国外源选择切换  "
 }
 
 #Route-trace 路由追踪测试·下载
 function rtsh() {
-    wget -P "/root/box" "https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh" --no-check-certificate
-    chmod +x "/root/box/AutoTrace.sh"
+    wget -P "~/box" "https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh" --no-check-certificate
+    chmod +x "~/box/AutoTrace.sh"
     blue "下载完成"
-    bash /root/box/AutoTrace.sh
-    green "手动运行: bash /root/box/AutoTrace.sh"
+    bash ~/box/AutoTrace.sh
+    green "手动运行: bash ~/box/AutoTrace.sh"
 }
 
 #Yabs.sh测试
@@ -146,44 +146,44 @@ function nezha() {
 
 #Acme.sh 域名证书一键申请脚本
 function acme1key() {
-    wget -P /root/box https://raw.githubusercontent.com/wanyunr/package/main/script/acme1key.sh --no-check-certificate -N
-    chmod +x "/root/box/acme1key.sh"
+    wget -P ~/box https://raw.githubusercontent.com/wanyunr/package/main/script/acme1key.sh --no-check-certificate -N
+    chmod +x "~/box/acme1key.sh"
     blue "下载完成"
-    bash "/root/box/acme1key.sh"
-    green "手动运行: bash /root/box/acme1key.sh"
+    bash "~/box/acme1key.sh"
+    green "手动运行: bash ~/box/acme1key.sh"
 }
 
 #filebrowser一键安装
 function filebrowser() {
-    wget -P /root/box https://raw.githubusercontent.com/wanyunr/package/main/script/filebrowser.sh --no-check-certificate -N
-    chmod +x "/root/box/filebrowser.sh"
+    wget -P ~/box https://raw.githubusercontent.com/wanyunr/package/main/script/filebrowser.sh --no-check-certificate -N
+    chmod +x "~/box/filebrowser.sh"
     blue "下载完成"
     green "默认安装目录为 / "
-    bash "/root/box/filebrowser.sh"
-    green "手动运行: bash /root/box/filebrowser.sh"
+    bash "~/box/filebrowser.sh"
+    green "手动运行: bash ~/box/filebrowser.sh"
 }
 
 #一键DD脚本
 function dd() {
-    wget -P "/root/box" "https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh" --no-check-certificate -N
-    chmod +x "/root/box/InstallNET.sh"
+    wget -P "~/box" "https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh" --no-check-certificate -N
+    chmod +x "~/box/InstallNET.sh"
     blue "下载完成"
     green "默认DD系统为 Debian 11 ，密码为 LeitboGi0ro"
-    green "手动运行: bash /root/box/InstallNET.sh -debian 11 --motd --bbr"
+    green "手动运行: bash ~/box/InstallNET.sh -debian 11 --motd --bbr"
     green "查看帮助: https://github.com/leitbogioro/Tools#quickly-start "
 }
 function 1Panel() {
-    wget -P "/root/box" "https://resource.fit2cloud.com/1panel/package/quick_start.sh" --no-check-certificate -N
-    chmod +x "/root/box/quick_start.sh"
+    wget -P "~/box" "https://resource.fit2cloud.com/1panel/package/quick_start.sh" --no-check-certificate -N
+    chmod +x "~/box/quick_start.sh"
     blue "下载完成"
-    bash "/root/box/quick_start.sh"
+    bash "~/box/quick_start.sh"
 }
 
 function aaPanel() {
-    wget -P "/root/box" "http://www.aapanel.com/script/install-ubuntu_6.0_en.sh" --no-check-certificate -N
-    chmod +x /root/box/install-ubuntu_6.0_en.sh
+    wget -P "~/box" "http://www.aapanel.com/script/install-ubuntu_6.0_en.sh" --no-check-certificate -N
+    chmod +x ~/box/install-ubuntu_6.0_en.sh
     blue "下载完成"
-    bash /root/box/install-ubuntu_6.0_en.sh forum
+    bash ~/box/install-ubuntu_6.0_en.sh forum
 }
 
 #Docker 一键安装
@@ -192,17 +192,17 @@ function Docker() {
 }
 
 function warp() {
-    wget -O "/root/box/warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh" --no-check-certificate -N
-    chmod +x "/root/box/warp.sh"
+    wget -O "~/box/warp.sh" "https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh" --no-check-certificate -N
+    chmod +x "~/box/warp.sh"
     blue "下载完成"
-    bash "/root/box/warp.sh"
+    bash "~/box/warp.sh"
 }
 
 function v2ray-agent() {
-    wget -O /root/box/v2ray-agent.sh https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh --no-check-certificate -N
-    chmod +x /root/box/v2ray-agent.sh
+    wget -O ~/box/v2ray-agent.sh https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh --no-check-certificate -N
+    chmod +x ~/box/v2ray-agent.sh
     blue "下载完成"
-    bash /root/box/v2ray-agent.sh
+    bash ~/box/v2ray-agent.sh
 }
 
 function x-ui() {
