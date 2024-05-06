@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-03-23 12:24:29
+ # @LastEditTime : 2024-05-06 10:21:58
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -100,7 +100,8 @@ function yabssh() {
     blue "-i	禁用 iperf（网络性能）测试"
     blue "-g	禁用 Geekbench（系统性能）测试"
     blue "-5	运行 Geekbench 5 测试并禁用 Geekbench 6 测试"
-    blue "示例：curl -sL yabs.sh | bash -s -- -fig	#仅打印系统信息"
+    blue "仅打印系统信息："
+    blue "curl -sL yabs.sh | bash -s -- -fig"
     # 询问是否继续，回车继续，输入其他字符退出
     read -p "回车继续，输入其他字符退出:" yabs
     [[ -z ${yabs} ]] && yabs="y"
