@@ -9,7 +9,7 @@ printf "Welcome to %s (%s)\n" "$DISTRIB_DESCRIPTION" "$(uname -r)"
 printf "\n"
 
 date=$(date)
-load=$(cat /proc/loadavg | awk '{print $1}')
+load=$(awk '{print $1" "$2" "$3}' /proc/loadavg)
 root_usage=$(df -h / | awk '/\// {print $(NF-1)}')
 memory_usage=$(free -m | awk '/Mem:/ { total=$2; used=$3 } END { printf("%3.1f%%", used/total*100)}')
 
@@ -94,5 +94,7 @@ UpdateNum=$(expr $UpdateRemind - 1)
 
 [ "$UpdateNum" -eq "1" ] && printf "$UpdateNum package can be upgraded. Run 'apt list --upgradable' to see it.\n"
 [ "$UpdateNum" -gt "1" ] && printf "$UpdateNum packages can be upgraded. Run 'apt list --upgradable' to see them.\n"
+
+printf "\n"
 
 rm -rf $UpdateLog
