@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-05-06 10:21:58
+ # @LastEditTime : 2024-05-16 17:03:01
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -121,6 +121,10 @@ function RegionRestrictionCheck() {
     bash <(curl -L -s check.unlock.media)
 }
 
+# IP 质量测试
+function ipcheck() {
+    bash <(curl -sL IP.Check.Place)
+}
 #三网测速
 function speedtest() {
     bash <(curl -sL bash.icu/speedtest)
@@ -231,8 +235,9 @@ function start_menu() {
     green " 12. 路由追踪测试"
     green " 13. Yabs.sh测试"
     green " 14. 流媒体解锁测试"
-    green " 15. 三网测速"
-    green " 16. 国际测速"
+    green " 15. IP 质量测试"
+    green " 16. 三网测速"
+    green " 17. 国际测速"
     yellow " --------------------------------------------------"
     green " 21. 安装哪吒面板/探针"
     green " 22. 安装Docker"
@@ -279,9 +284,12 @@ function start_menu() {
         RegionRestrictionCheck
         ;;
     15)
-        speedtest
+        ipcheck
         ;;
     16)
+        speedtest
+        ;;
+    17)
         globe_speedtest
         ;;
     21)
