@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-05-16 17:03:01
+ # @LastEditTime : 2024-06-12 21:00:41
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -24,7 +24,7 @@ blue() {
 
 #IPV.SH ipv4/6优先级调整一键脚本
 function ipvsh() {
-    wget -P "$HOME/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/ipv.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/ipv.sh" --no-check-certificate -N
     chmod +x "$HOME/box/ipv.sh"
     blue "下载完成"
     bash "$HOME/box/ipv.sh"
@@ -41,7 +41,7 @@ function getip() {
 
 #最新或 LTS 版本的 Linux 内核并启用 BBR 或 BBR Plus安装
 function kernel() {
-    wget -P "$HOME/box" "https://git.io/kernel.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "https://git.io/kernel.sh" --no-check-certificate -N
     chmod +x "$HOME/box/kernel.sh"
     blue "下载完成"
     bash "$HOME/box/kernel.sh"
@@ -50,7 +50,7 @@ function kernel() {
 
 #TCP加速 一键安装管理
 function tcpx() {
-    wget -P "$HOME/box" "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" --no-check-certificate -N
     chmod +x "$HOME/box/tcpx.sh"
     blue "下载完成"
     bash "$HOME/box/tcpx.sh"
@@ -58,7 +58,7 @@ function tcpx() {
 }
 #SSH 密钥一键配置脚本·下载
 function ski() {
-    wget -P "$HOME/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/SSH-Key-Installer.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/SSH-Key-Installer.sh" --no-check-certificate -N
     chmod +x "$HOME/box/SSH-Key-Installer.sh"
     blue "下载完成"
     green "手动运行: bash $HOME/box/SSH-Key-Installer.sh"
@@ -74,7 +74,7 @@ red "卸载请 运行 wget https://raw.githubusercontent.com/FunctionClub/Fail2b
 
 #Linux换源脚本-国内·下载
 function cm() {
-    wget -P "$HOME/box" "https://raw.githubusercontent.com/SuperManito/LinuxMirrors/main/ChangeMirrors.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "https://raw.githubusercontent.com/SuperManito/LinuxMirrors/main/ChangeMirrors.sh" --no-check-certificate -N
     chmod +x "$HOME/box/ChangeMirrors.sh"
     blue "下载完成"
     echo
@@ -87,7 +87,7 @@ function cm() {
 
 #Route-trace 路由追踪测试·下载
 function rtsh() {
-    wget -P "$HOME/box" "https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh" --no-check-certificate
+    wget -N -P "$HOME/box" "https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh" --no-check-certificate
     chmod +x "$HOME/box/AutoTrace.sh"
     blue "下载完成"
     bash $HOME/box/AutoTrace.sh
@@ -135,6 +135,14 @@ function globe_speedtest() {
     bash <(curl -Lso- hnetwork-speed.xyz)
 }
 
+#融合怪测试
+function ecs() {
+    wget -N -P "$HOME/box" "https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh" --no-check-certificate
+    chmod +x "$HOME/box/ecs.sh"
+    blue "下载完成"
+    bash $HOME/box/ecs.sh
+    green "手动运行: bash $HOME/box/ecs.sh"
+}
 #NEZHA.SH哪吒面板/探针·下载
 function nezha() {
     country_code=$(curl -s ipinfo.io/country)
@@ -151,7 +159,7 @@ function nezha() {
 
 #Acme.sh 域名证书一键申请脚本
 function acme1key() {
-    wget -P $HOME/box https://raw.githubusercontent.com/wanyunr/package/main/script/acme1key.sh --no-check-certificate -N
+    wget -N -P $HOME/box https://raw.githubusercontent.com/wanyunr/package/main/script/acme1key.sh --no-check-certificate -N
     chmod +x "$HOME/box/acme1key.sh"
     blue "下载完成"
     bash "$HOME/box/acme1key.sh"
@@ -160,7 +168,7 @@ function acme1key() {
 
 #filebrowser一键安装
 function filebrowser() {
-    wget -P $HOME/box https://raw.githubusercontent.com/wanyunr/package/main/script/filebrowser.sh --no-check-certificate -N
+    wget -N -P $HOME/box https://raw.githubusercontent.com/wanyunr/package/main/script/filebrowser.sh --no-check-certificate -N
     chmod +x "$HOME/box/filebrowser.sh"
     blue "下载完成"
     green "默认安装目录为 / "
@@ -170,7 +178,7 @@ function filebrowser() {
 
 #一键DD脚本
 function dd() {
-    wget -P "$HOME/box" "https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh" --no-check-certificate -N
     chmod +x "$HOME/box/InstallNET.sh"
     blue "下载完成"
     green "默认DD系统为 Debian 11 ，密码为 LeitboGi0ro"
@@ -178,14 +186,14 @@ function dd() {
     green "查看帮助: https://github.com/leitbogioro/Tools#quickly-start "
 }
 function 1Panel() {
-    wget -P "$HOME/box" "https://resource.fit2cloud.com/1panel/package/quick_start.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "https://resource.fit2cloud.com/1panel/package/quick_start.sh" --no-check-certificate -N
     chmod +x "$HOME/box/quick_start.sh"
     blue "下载完成"
     bash "$HOME/box/quick_start.sh"
 }
 
 function aaPanel() {
-    wget -P "$HOME/box" "http://www.aapanel.com/script/install-ubuntu_6.0_en.sh" --no-check-certificate -N
+    wget -N -P "$HOME/box" "http://www.aapanel.com/script/install-ubuntu_6.0_en.sh" --no-check-certificate -N
     chmod +x $HOME/box/install-ubuntu_6.0_en.sh
     blue "下载完成"
     bash $HOME/box/install-ubuntu_6.0_en.sh forum
@@ -238,6 +246,7 @@ function start_menu() {
     green " 15. IP 质量测试"
     green " 16. 三网测速"
     green " 17. 国际测速"
+    green " 18. 融合怪测试"
     yellow " --------------------------------------------------"
     green " 21. 安装哪吒面板/探针"
     green " 22. 安装Docker"
@@ -291,6 +300,9 @@ function start_menu() {
         ;;
     17)
         globe_speedtest
+        ;;
+    18)
+        ecs
         ;;
     21)
         nezha
