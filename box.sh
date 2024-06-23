@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-06-12 21:00:41
+ # @LastEditTime : 2024-06-23 12:04:55
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -33,7 +33,7 @@ function ipvsh() {
 }
 
 #常用工具包一键安装
-function ipvsh() {
+function ini() {
     wget -N -P "$HOME/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/initialize.sh" --no-check-certificate -N
     chmod +x "$HOME/box/initialize.sh"
     blue "下载完成"
