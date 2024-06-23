@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-06-23 12:08:38
+ # @LastEditTime : 2024-06-23 12:23:06
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -37,7 +37,14 @@ function initialize_tools() {
     chmod +x "$HOME/box/initialize.sh"
     blue "下载完成"
     bash "$HOME/box/initialize.sh"
-    green "手动运行: bash $HOME/box/initialize.sh"
+}
+
+# xanmod-x64v3 内核安装
+function xanmod() {
+    wget -N -P "$HOME/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/xanmod.sh" --no-check-certificate
+    chmod +x "$HOME/box/xanmod.sh"
+    blue "下载完成"
+    bash "$HOME/box/xanmod.sh"
 }
 
 # 测试 IPv4 优先还是 IPv6 优先
@@ -258,6 +265,7 @@ function start_menu() {
     green " 7. F2B一键安装脚本"
     green " 8. 一键DD脚本"
     green " 9. 常用工具包一键安装"
+    green " 10. xanmod 内核安装"
     yellow " --------------------------------------------------"
     green " 12. 路由追踪测试"
     green " 13. Yabs.sh测试"
@@ -287,6 +295,7 @@ function start_menu() {
         7) f2bsh ;;
         8) dd ;;
         9) initialize_tools ;;
+        10) xanmod ;;
         12) rtsh ;;
         13) yabssh ;;
         14) RegionRestrictionCheck ;;
