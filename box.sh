@@ -32,6 +32,16 @@ function ipvsh() {
 
 }
 
+#常用工具包一键安装
+function ipvsh() {
+    wget -N -P "$HOME/box" "https://raw.githubusercontent.com/wanyunr/package/master/script/initialize.sh" --no-check-certificate -N
+    chmod +x "$HOME/box/initialize.sh"
+    blue "下载完成"
+    bash "$HOME/box/initialize.sh"
+    green "手动运行: bash $HOME/box/initialize.sh"
+
+}
+
 #测试 IPv4 优先还是 IPv6 优先
 function getip() {
     echo
@@ -239,6 +249,7 @@ function start_menu() {
     green " 6. Linux一键换源"
     green " 7. F2B一键安装脚本"
     green " 8. 一键DD脚本"
+    green " 9. 常用工具包一键安装
     yellow " --------------------------------------------------"
     green " 12. 路由追踪测试"
     green " 13. Yabs.sh测试"
@@ -282,6 +293,9 @@ function start_menu() {
         ;;
     8)
         dd
+        ;;
+    9)
+        ini
         ;;
     12)
         rtsh
