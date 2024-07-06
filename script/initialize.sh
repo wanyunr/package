@@ -29,7 +29,7 @@ sudo apt install -y iperf3 lrzsz ufw vim vnstat tree traceroute unzip
 
 # 下载并安装 lsd
 wget -P "$DOWNLOAD_DIR" https://github.com/lsd-rs/lsd/releases/download/v1.1.2/lsd_1.1.2_amd64_xz.deb
-dpkg -i "$DOWNLOAD_DIR/lsd_1.1.2_amd64.deb"
+dpkg -i "$DOWNLOAD_DIR/lsd_1.1.2_amd64_xz.deb"
 
 # 添加或替换 lsd 的 alias
 add_or_replace_alias "ll" "lsd --long --header"
