@@ -25,7 +25,7 @@ add_or_replace_alias() {
 }
 
 # 安装其他软件包
-sudo apt install -y iperf3 lrzsz ufw vim vnstat tree
+sudo apt install -y iperf3 lrzsz ufw vim vnstat tree traceroute unzip
 
 # 下载并安装 lsd
 wget -P "$DOWNLOAD_DIR" https://github.com/lsd-rs/lsd/releases/download/v1.1.2/lsd_1.1.2_amd64.deb
