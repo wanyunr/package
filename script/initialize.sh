@@ -7,7 +7,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # 无颜色
 
 # 创建下载目录
-DOWNLOAD_DIR="$HOME/box/initialize"
+DOWNLOAD_DIR="/tmp/box/initialize"
 mkdir -p "$DOWNLOAD_DIR"
 
 # 函数：在 .bashrc 中添加或替换 alias
