@@ -25,13 +25,14 @@ add_or_replace_alias() {
 }
 
 # 安装其他软件包
-sudo apt install -y iperf3 lrzsz ufw vim vnstat tree traceroute unzip
+sudo apt install -y iperf3 lrzsz ufw vim vnstat tree traceroute unzip lsof
 
 # 下载并安装 lsd
 wget -P "$DOWNLOAD_DIR" https://github.com/lsd-rs/lsd/releases/download/v1.1.2/lsd_1.1.2_amd64_xz.deb
 dpkg -i "$DOWNLOAD_DIR/lsd_1.1.2_amd64_xz.deb"
 
 # 添加或替换 lsd 的 alias
+add_or_replace_alias "la" "lsd -a"
 add_or_replace_alias "ll" "lsd --long --header"
 
 # 添加或替换 tree 的 alias
@@ -64,17 +65,17 @@ sudo dpkg -i "$DOWNLOAD_DIR/bottom_0.9.6_amd64.deb"
 # 显示安装信息及别名替换信息
 echo -e "${YELLOW}以下软件包已安装，并设置了相应的别名${NC}"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "软件包" "别名"
-printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "iperf3" "无别名"
-printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "lrzsz" "无别名"
-printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "ufw" "无别名"
-printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "vim" "无别名"
-printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "vnstat" "无别名"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "iperf3" "无"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "lrzsz" "无"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "ufw" "无"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "vim" "无"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "vnstat" "无"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "tree" "t2 -> 'tree -L 2'"
-printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "lsd" "ll -> 'lsd --long --header'"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "lsd" "ls -> 'lsd' -> 'lsd --long --header'"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "du" "d1 -> 'du -ah --max-depth=1'"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "duf" "df -> 'duf'"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "fastfetch" "ff -> 'fastfetch --logo none'"
-printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "tcping" "无别名"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "tcping" "无"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "bottom" "btm"
 
 # 删除下载的文件
