@@ -23,7 +23,7 @@ add_or_replace_alias() {
 }
 
 # 安装其他软件包
-sudo apt install -y iperf3 lrzsz ufw vim vnstat tree traceroute unzip lsof
+apt update && apt install -y sudo wget curl iperf3 lrzsz ufw vim vnstat tree traceroute unzip lsof
 
 # 下载并安装 lsd
 wget -q --show-progress -P "$DOWNLOAD_DIR" https://github.com/lsd-rs/lsd/releases/download/v1.1.2/lsd_1.1.2_amd64_xz.deb
@@ -81,3 +81,6 @@ rm -rf "$DOWNLOAD_DIR"
 
 # 使 .bashrc 生效以应用新的 alias
 source ~/.bashrc
+
+# 提示用户
+echo -e "${YELLOW}如果别名未生效，请新建一个终端窗口。${NC}"
