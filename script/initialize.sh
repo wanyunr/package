@@ -68,8 +68,8 @@ wget -q --show-progress -P "$DOWNLOAD_DIR" https://github.com/pouriyajamshidi/tc
 sudo apt install -y "$DOWNLOAD_DIR/tcping_amd64.deb"
 
 # 下载并安装 bottom
-curl -s -L -o "$DOWNLOAD_DIR/bottom_0.9.6_amd64.deb" https://github.com/ClementTsang/bottom/releases/latest/download/bottom_0.9.6_amd64.deb
-sudo dpkg -i "$DOWNLOAD_DIR/bottom_0.9.6_amd64.deb"
+curl -s -L -o "$DOWNLOAD_DIR/bottom_0.10.1-1_amd64.deb" https://github.com/ClementTsang/bottom/releases/download/0.10.1/bottom_0.10.1-1_amd64.deb
+sudo dpkg -i "$DOWNLOAD_DIR/bottom_0.10.1-1_amd64.deb"
 
 # # 同步系统时间 1
 sudo ntpdate pool.ntp.org
