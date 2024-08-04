@@ -3,7 +3,7 @@
 # @Author       : wanyunr
 # @Email        : wanyunr@outlook.com
 # @Date         : 2023-11-11 00:34:53
- # @LastEditTime : 2024-06-23 12:23:06
+ # @LastEditTime : 2024-08-04 16:32:02
 # @Description  :
 # Copyright (c) 2023 by wanyunr, All Rights Reserved.
 ###
@@ -147,7 +147,7 @@ function speedtest() {
 
 # 国际测速
 function globe_speedtest() {
-    bash <(curl -Lso- hnetwork-speed.xyz)
+    bash <(curl -Lso- network-speed.xyz)
 }
 
 # 融合怪测试
