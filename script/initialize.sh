@@ -6,6 +6,17 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # 无颜色
 
+# 检查系统是否为AMD架构的Debian或Ubuntu系统
+if ! [[ $(uname -m) == "x86_64" ]]; then
+    echo -e "${RED}此脚本仅支持AMD64架构系统。退出脚本。${NC}"
+    exit 1
+fi
+
+if ! grep -Ei 'debian|ubuntu' /etc/os-release > /dev/null; then
+    echo -e "${RED}此脚本仅支持Debian或Ubuntu系统。退出脚本。${NC}"
+    exit 1
+fi
+
 # 创建下载目录
 DOWNLOAD_DIR="/tmp/box/initialize"
 mkdir -p "$DOWNLOAD_DIR"
@@ -23,7 +34,7 @@ add_or_replace_alias() {
 }
 
 # 安装其他软件包
-apt update && apt install -y sudo wget curl iperf3 lrzsz ufw vim vnstat tree traceroute unzip lsof
+apt update && apt install -y sudo wget curl iperf3 lrzsz ufw vim vnstat tree traceroute unzip lsof ntpdate
 
 # 下载并安装 lsd
 wget -q --show-progress -P "$DOWNLOAD_DIR" https://github.com/lsd-rs/lsd/releases/download/v1.1.2/lsd_1.1.2_amd64_xz.deb
@@ -59,6 +70,31 @@ sudo apt install -y "$DOWNLOAD_DIR/tcping_amd64.deb"
 # 下载并安装 bottom
 curl -s -L -o "$DOWNLOAD_DIR/bottom_0.9.6_amd64.deb" https://github.com/ClementTsang/bottom/releases/latest/download/bottom_0.9.6_amd64.deb
 sudo dpkg -i "$DOWNLOAD_DIR/bottom_0.9.6_amd64.deb"
+
+# # 同步系统时间 1
+sudo ntpdate pool.ntp.org
+# 设置时区为上海
+sudo timedatectl set-timezone Asia/Shanghai
+# 创建一个cron作业，每天0点同步时间
+(crontab -l 2>/dev/null; echo "0 0 * * * /usr/sbin/ntpdate pool.ntp.org") | crontab -
+
+# # 同步系统时间 2
+# sudo bash -c 'cat << EOF > /etc/ntp.conf
+# # Use public servers from the pool.ntp.org project.
+# pool pool.ntp.org iburst
+
+# # Specify the drift file.
+# driftfile /var/lib/ntp/ntp.drift
+
+# # Enable kernel synchronization of the real-time clock (RTC).
+# rtcsync
+# EOF'
+# # 重启ntp服务以应用新配置
+# sudo systemctl restart ntp
+# # 设置时区为上海
+# sudo timedatectl set-timezone Asia/Shanghai
+# # 创建一个cron作业，每天0点同步时间
+# (crontab -l 2>/dev/null; echo "0 0 * * * /usr/sbin/ntpdate pool.ntp.org") | crontab -
 
 # 显示安装信息及别名替换信息
 echo -e "${YELLOW}以下软件包已安装，并设置了相应的别名${NC}"
