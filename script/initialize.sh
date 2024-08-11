@@ -1,4 +1,13 @@
 #!/bin/bash
+###
+ # @Author       : wanyunr
+ # @Email        : wanyunr@outlook.com
+ # @Date         : 2024-06-23 11:16:34
+ # @LastEditors  : wanyunr
+ # @LastEditTime : 2024-08-11 23:32:51
+ # @Description  : 
+ # Copyright (c) 2024 by wanyunr, All Rights Reserved.
+### 
 
 # ANSI转义码用于颜色
 BLUE='\033[0;34m'
@@ -95,6 +104,12 @@ sudo timedatectl set-timezone Asia/Shanghai
 # sudo timedatectl set-timezone Asia/Shanghai
 # # 创建一个cron作业，每天0点同步时间
 # (crontab -l 2>/dev/null; echo "0 0 * * * /usr/sbin/ntpdate pool.ntp.org") | crontab -
+
+# 限制 journald 日志大小
+echo "Limit the size of journald" 
+sudo sh -c 'echo -e "\n[Journal]\nSystemMaxUse=50M\nSystemMaxFileSize=2M\nSystemKeepFiles=2" >> /etc/systemd/journald.conf'
+sudo journalctl --vacuum-time=1week
+sudo systemctl restart systemd-journald
 
 # 显示安装信息及别名替换信息
 echo -e "${YELLOW}以下软件包已安装，并设置了相应的别名${NC}"
