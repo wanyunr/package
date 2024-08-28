@@ -4,7 +4,7 @@
  # @Email        : wanyunr@outlook.com
  # @Date         : 2024-06-23 11:16:34
  # @LastEditors  : wanyunr
- # @LastEditTime : 2024-08-11 23:32:51
+ # @LastEditTime : 2024-08-28 09:19:39
  # @Description  : 
  # Copyright (c) 2024 by wanyunr, All Rights Reserved.
 ### 
@@ -70,7 +70,7 @@ wget -q --show-progress -P "$DOWNLOAD_DIR" https://github.com/fastfetch-cli/fast
 sudo dpkg -i "$DOWNLOAD_DIR/fastfetch-linux-amd64.deb"
 
 # 添加 fastfetch 的 alias
-add_or_replace_alias "ff" "fastfetch --logo none"
+add_or_replace_alias "ff" "fastfetch --logo $(lsb_release -si)_small --logo-padding-top 6"
 
 # 下载并安装 tcping
 wget -q --show-progress -P "$DOWNLOAD_DIR" https://github.com/pouriyajamshidi/tcping/releases/latest/download/tcping_amd64.deb
