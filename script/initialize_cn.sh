@@ -2,9 +2,18 @@
 ###
  # @Author       : wanyunr
  # @Email        : wanyunr@outlook.com
+ # @Date         : 2024-09-20 21:20:09
+ # @LastEditors  : wanyunr
+ # @LastEditTime : 2024-09-27 00:01:29
+ # @Description  : 
+ # Copyright (c) 2024 by wanyunr, All Rights Reserved.
+### 
+###
+ # @Author       : wanyunr
+ # @Email        : wanyunr@outlook.com
  # @Date         : 2024-06-23 11:16:34
  # @LastEditors  : wanyunr
- # @LastEditTime : 2024-09-02 12:16:12
+ # @LastEditTime : 2024-09-12 13:39:45
  # @Description  : 
  # Copyright (c) 2024 by wanyunr, All Rights Reserved.
 ### 
@@ -80,6 +89,12 @@ sudo apt install -y "$DOWNLOAD_DIR/tcping_amd64.deb"
 curl -s -L -o "$DOWNLOAD_DIR/bottom_0.10.1-1_amd64.deb" https://js8.nl/https://github.com/ClementTsang/bottom/releases/download/0.10.1/bottom_0.10.1-1_amd64.deb
 sudo dpkg -i "$DOWNLOAD_DIR/bottom_0.10.1-1_amd64.deb"
 
+# 下载并安装 dust
+curl -s -L -o "$DOWNLOAD_DIR/ncdu-2.5-linux-x86_64.tar.gz" https://dev.yorhel.nl/download/ncdu-2.5-linux-x86_64.tar.gz
+tar -xzvf "$DOWNLOAD_DIR/ncdu-2.5-linux-x86_64.tar.gz" && rm "$DOWNLOAD_DIR/ncdu-2.5-linux-x86_64.tar.gz"
+chmod +x ncdu
+mv ncdu /usr/bin
+
 # # 同步系统时间 1
 sudo ntpdate pool.ntp.org
 # 设置时区为上海
@@ -126,6 +141,7 @@ printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "duf" "df -> 'duf'"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "fastfetch" "ff -> 'fastfetch --logo none'"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "tcping" "无"
 printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "bottom" "btm"
+printf "${GREEN}%-15s${NC} ${BLUE}%-40s${NC}\n" "ncdu" "无"
 
 # 删除下载的文件
 rm -rf "$DOWNLOAD_DIR"
